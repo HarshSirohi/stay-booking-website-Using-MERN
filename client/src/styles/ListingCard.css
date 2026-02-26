@@ -1,0 +1,95 @@
+.listing-card {
+    position: relative;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 12px;
+    width: 320px;
+    transition: box-shadow 0.3s ease;
+}
+
+.listing-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.listing-card .slider-container {
+    width: 100%;
+    height: 240px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    background-color: #ccc;
+    position: relative;
+}
+
+.listing-card .slide {
+    width: 100%;
+    height: 240px;
+    position: relative;
+    overflow: hidden;
+}
+
+.listing-card .slide div {
+    display: block;
+    width: 100%;
+    height: 240px;
+    border-radius: 12px;
+}
+
+.listing-card .prev-button,
+.listing-card .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 6px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 10;
+}
+
+.listing-card .prev-button:hover,
+.listing-card .next-button:hover {
+    background-color: white;
+}
+
+.listing-card .prev-button {
+    left: 10px;
+}
+
+.listing-card .next-button {
+    right: 10px;
+}
+
+.listing-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 6px 0 2px;
+    color: #222;
+}
+
+.listing-card p {
+    font-size: 14px;
+    color: #555;
+    margin: 2px 0;
+}
+
+.listing-card span {
+    font-weight: 700;
+    font-size: 16px;
+    color: #222;
+}
+
+.listing-card .favorite {
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    background: none;
+}

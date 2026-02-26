@@ -1,0 +1,98 @@
+/* ===== NAVBAR ENHANCEMENTS ===== */
+
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 30px rgba(36, 53, 90, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: fadeInDown 0.5s ease forwards;
+    transition: background var(--transition), box-shadow var(--transition);
+}
+
+.navbar:hover {
+    box-shadow: 0 6px 40px rgba(248, 57, 90, 0.1);
+}
+
+/* Logo hover */
+.navbar img {
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.navbar img:hover {
+    transform: scale(1.08) rotate(-2deg);
+    filter: drop-shadow(0 4px 12px rgba(248, 57, 90, 0.4));
+}
+
+/* Search bar */
+.navbar_search {
+    transition: box-shadow var(--transition), border-color var(--transition);
+    background: white;
+}
+
+.navbar_search:focus-within {
+    box-shadow: 0 0 0 3px rgba(248, 57, 90, 0.2) !important;
+    border-color: #F8395A !important;
+}
+
+.navbar_search input {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Account button */
+.navbar_right_account {
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.navbar_right_account:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(36, 53, 90, 0.15) !important;
+}
+
+/* Host link */
+.navbar_right .host {
+    position: relative;
+    font-family: 'Outfit', sans-serif;
+}
+
+.navbar_right .host::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #F8395A;
+    transition: width 0.3s ease;
+}
+
+.navbar_right .host:hover::after {
+    width: 100%;
+}
+
+/* Dropdown menu items */
+.navbar_right_accountmenu {
+    animation: fadeInDown 0.22s ease forwards;
+    border: 1px solid rgba(248, 57, 90, 0.12) !important;
+}
+
+.navbar_right_accountmenu a {
+    transition: background 0.2s, color 0.2s, padding-left 0.2s;
+}
+
+.navbar_right_accountmenu a:hover {
+    padding-left: 22px !important;
+}
+
+/* Profile image in navbar */
+.navbar_right_account img {
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.navbar_right_account:hover img {
+    border-color: #F8395A;
+}

@@ -1,0 +1,20 @@
+/* App.css — cleaned up for full-width layout */
+
+/* Full-width #root — NO constraints */
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  min-height: 100vh;
+}
+
+/* Ensure global scrolling is enabled */
+html,
+body {
+  overflow-x: hidden;
+  overflow-y: auto !important;
+  height: auto !important;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,64 @@
+/* ===== CATEGORIES ENHANCEMENTS ===== */
+
+/* Section heading — bold, readable */
+.categories h1 {
+    color: #24355A;
+    animation: fadeInUp 0.7s ease forwards;
+}
+
+.categories p {
+    animation: fadeInUp 0.9s ease forwards;
+    color: #555;
+}
+
+/* Category card 3D tilt & shine */
+.categories_list .category {
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
+    overflow: hidden;
+}
+
+.categories_list .category::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -60%;
+    width: 60%;
+    height: 200%;
+    background: linear-gradient(120deg,
+            transparent 30%,
+            rgba(255, 255, 255, 0.45) 50%,
+            transparent 70%);
+    transform: skewX(-15deg);
+    transition: left 0.55s ease;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.categories_list .category:hover::before {
+    left: 130%;
+}
+
+.categories_list .category:hover {
+    transform: perspective(600px) rotateY(-5deg) translateY(-6px);
+    box-shadow: 0 18px 48px rgba(248, 57, 90, 0.28), 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+.categories_list .category:hover .overlay {
+    background-color: rgba(248, 57, 90, 0.45);
+}
+
+/* Category text animation */
+.categories_list .category_text {
+    transition: transform 0.3s ease;
+}
+
+.categories_list .category:hover .category_text {
+    transform: scale(1.1);
+}
+
+/* Section entrance */
+.categories_list {
+    animation: fadeInUp 0.8s ease forwards;
+}

@@ -1,0 +1,30 @@
+.slide {
+  /* Make the slide break out of any centered app container (full-bleed) */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  height: 70vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("/assets/slide.jpg");
+  background-position: center center;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 48px;
+    line-height: 1.05;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  }
+}

@@ -1,0 +1,115 @@
+
+@use "./variables" as var;
+
+.listing-card {
+  position: relative;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+
+  &:hover {
+    @include var.shadow;
+  }
+
+  .slider-container {
+    width: 300px;
+    // width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease;
+      
+
+      .slide {
+        position: relative;
+        flex: 0 0 100%;
+        width: 100%;
+        height: 270px;
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 10px;
+          filter: brightness(85%);
+        }
+
+        .prev-button,
+        .next-button {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          padding: 6px;
+          border-radius: 50%;
+          border: none;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: rgba(255, 255, 255, 0.7);
+          z-index: 9999;
+
+          &:hover {
+            background-color: white;
+          }
+        }
+
+        .prev-button {
+          left: 10px;
+        }
+
+        .next-button {
+          right: 10px;
+        }
+      }
+    }
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  span {
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .favorite {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 999;
+    background: none;
+  }
+}
+
+// /* ===== FIX WISHLIST CLICK ISSUE ===== */
+
+// .listing-card {
+//   width: 300px;   // match slider-container width
+// }
+
+// .listing-card-image {
+//   z-index: 1;
+// }
+
+// .listing-card-image img {
+//   pointer-events: none;   // VERY IMPORTANT FIX
+// }
+
+// .listing-card-image .wishlist-icon {
+//   pointer-events: auto;
+//   z-index: 9999;          // make sure it is always above
+// }

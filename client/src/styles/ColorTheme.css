@@ -1,0 +1,159 @@
+/* =============================================================
+   COLOR THEME — Seamless flowing color, no harsh section lines
+   The body gradient flows through everything as one smooth wash.
+   ============================================================= */
+
+/* ---- Body: rich continuous warm gradient ---- */
+body {
+    background: linear-gradient(160deg,
+            #ffe0cc 0%,
+            #f8bbd0 15%,
+            #f0bbdd 28%,
+            #d1c4e9 42%,
+            #b3d4fc 56%,
+            #b2ebf2 70%,
+            #c8e6c9 82%,
+            #fff9c4 100%) !important;
+    background-attachment: fixed !important;
+}
+
+/* ---- All sections: transparent so body gradient shows through ---- */
+.navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-bottom: 1px solid rgba(248, 57, 90, 0.06) !important;
+    box-shadow: 0 2px 20px rgba(248, 57, 90, 0.04) !important;
+}
+
+.categories {
+    background: rgba(255, 255, 255, 0.15) !important;
+}
+
+.category-list {
+    background: rgba(255, 255, 255, 0.12) !important;
+}
+
+.listings {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.list {
+    background: transparent !important;
+}
+
+.create-listing {
+    background: rgba(255, 255, 255, 0.35) !important;
+}
+
+.listing-details {
+    background: rgba(255, 255, 255, 0.35) !important;
+}
+
+.login {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.register {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ---- Footer: smooth dark blend from the warm bg ---- */
+.footer {
+    background: linear-gradient(180deg, rgba(26, 39, 68, 0.0) 0%, #1a2744 15%, #1a1a2e 100%) !important;
+    border-top: none !important;
+}
+
+/* ---- Listing cards: frosted glass on the flowing bg ---- */
+.listing-card {
+    background: rgba(255, 255, 255, 0.55) !important;
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: box-shadow 0.35s ease, transform 0.35s ease, background 0.35s ease !important;
+}
+
+.listing-card:hover {
+    background: rgba(255, 255, 255, 0.8) !important;
+    box-shadow: 0 12px 35px rgba(248, 57, 90, 0.1), 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+    transform: translateY(-4px) !important;
+    border-color: rgba(248, 57, 90, 0.12) !important;
+}
+
+/* ---- Booking section ---- */
+.listing-details .booking {
+    background: rgba(255, 255, 255, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 4px 24px rgba(248, 57, 90, 0.06) !important;
+    backdrop-filter: blur(6px);
+}
+
+/* ---- Facility pills ---- */
+.listing-details .facility {
+    background: rgba(255, 255, 255, 0.55) !important;
+    border: 1px solid rgba(248, 57, 90, 0.06) !important;
+    transition: all 0.3s ease !important;
+}
+
+.listing-details .facility:hover {
+    background: linear-gradient(135deg, #F8395A, #ff6b8a) !important;
+    color: white !important;
+    border-color: transparent !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 18px rgba(248, 57, 90, 0.3) !important;
+}
+
+.listing-details .facility:hover p,
+.listing-details .facility:hover .facility_icon {
+    color: white !important;
+}
+
+/* ---- Create listing step cards ---- */
+.create-listing_step1,
+.create-listing_step2 {
+    background: rgba(255, 255, 255, 0.55) !important;
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(6px);
+    /* overflow: hidden !important; REMOVED as it clips input borders */
+}
+
+.create-listing .category,
+.create-listing .facility {
+    overflow: hidden !important;
+}
+
+/* ---- Dropdown menu ---- */
+.navbar_right_accountmenu {
+    background: white !important;
+    border: 1px solid rgba(248, 57, 90, 0.08) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* ---- Search bar ---- */
+.navbar_search {
+    background: rgba(255, 255, 255, 0.75) !important;
+    border: 1px solid rgba(248, 57, 90, 0.06) !important;
+}
+
+.navbar_search:focus-within {
+    border-color: #F8395A !important;
+    box-shadow: 0 0 0 3px rgba(248, 57, 90, 0.1) !important;
+}
+
+/* ---- All content above background (navbar excluded to keep z-index:1000) ---- */
+.slide,
+.categories,
+.listings,
+.footer,
+.login,
+.register,
+.listing-details,
+.create-listing,
+.list,
+.title-list,
+.category-list,
+.loader {
+    position: relative;
+    z-index: 1;
+}

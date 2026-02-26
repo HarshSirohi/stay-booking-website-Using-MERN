@@ -1,0 +1,133 @@
+/* ===== REGISTER PAGE ENHANCEMENTS ===== */
+
+/* Animated blobs */
+.register {
+    position: relative;
+    overflow: hidden;
+}
+
+.register::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: -150px;
+    right: -130px;
+    background: radial-gradient(circle, rgba(248, 57, 90, 0.4) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: blobMorph 10s ease-in-out infinite, float 8s ease-in-out infinite;
+    z-index: 0;
+}
+
+.register::after {
+    content: '';
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    bottom: -100px;
+    left: -100px;
+    background: radial-gradient(circle, rgba(36, 53, 90, 0.5) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: blobMorph 12s ease-in-out infinite reverse, float 9s ease-in-out infinite;
+    z-index: 0;
+}
+
+/* Glass card */
+.register_content {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow:
+        0 8px 40px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    animation: fadeInUp 0.7s ease forwards;
+    overflow-y: auto;
+    max-height: 95vh;
+}
+
+/* Heading */
+.register_content::before {
+    content: '🏡 Create Account';
+    display: block;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 6px;
+}
+
+/* Inputs */
+.register_content_form input:not([type="file"]) {
+    border-bottom-color: rgba(255, 255, 255, 0.35) !important;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.register_content_form input:not([type="file"]):focus {
+    border-bottom-color: #F8395A !important;
+    outline: none;
+}
+
+/* Upload label */
+.register_content_form label {
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 12px 20px;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.register_content_form label:hover {
+    border-color: #F8395A;
+    background: rgba(248, 57, 90, 0.1);
+    animation: glowPulse 1.5s ease infinite;
+}
+
+/* Profile image preview pulse */
+.register_content_form img[alt="profile photo"] {
+    border: 3px solid #F8395A;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(248, 57, 90, 0.2);
+    animation: glowPulse 2s ease infinite;
+}
+
+/* Submit button */
+.register_content_form button[type="submit"] {
+    background: linear-gradient(135deg, #F8395A 0%, #ff6b8a 50%, #F8395A 100%);
+    background-size: 200% auto;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding: 12px 0;
+    cursor: pointer;
+    transition: background-position 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
+    box-shadow: 0 6px 22px rgba(248, 57, 90, 0.45);
+}
+
+.register_content_form button[type="submit"]:hover:not(:disabled) {
+    background-position: right center;
+    box-shadow: 0 10px 32px rgba(248, 57, 90, 0.65);
+    transform: translateY(-2px);
+}
+
+.register_content_form button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Link */
+.register_content>a {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 500;
+    font-size: 13px;
+    transition: color 0.3s;
+}
+
+.register_content>a:hover {
+    color: #ffd6de !important;
+}

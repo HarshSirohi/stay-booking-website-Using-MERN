@@ -1,0 +1,267 @@
+/* ===== BACKGROUND FIX — Full-width, rich colored, seamless ===== */
+
+/* ---- Full-page colored gradient background ---- */
+html {
+    background: #1a1a2e;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    /* Deep luxurious gradient — dark navy to deep purple with warm hints */
+    background: linear-gradient(145deg,
+            #1a1a2e 0%,
+            #16213e 25%,
+            #1a1a2e 50%,
+            #0f3460 75%,
+            #1a1a2e 100%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+    color: #333;
+}
+
+/* ---- Animated ambient glow orbs ---- */
+body::before {
+    content: '';
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    top: -150px;
+    left: -150px;
+    background: radial-gradient(circle, rgba(248, 57, 90, 0.15) 0%, transparent 65%);
+    border-radius: 50%;
+    animation: floatBg1 22s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    bottom: -130px;
+    right: -130px;
+    background: radial-gradient(circle, rgba(78, 205, 196, 0.12) 0%, transparent 65%);
+    border-radius: 50%;
+    animation: floatBg2 28s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes floatBg1 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(80px, 60px) scale(1.08);
+    }
+
+    66% {
+        transform: translate(-40px, 100px) scale(0.95);
+    }
+}
+
+@keyframes floatBg2 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(-60px, -40px) scale(1.05);
+    }
+
+    66% {
+        transform: translate(50px, -70px) scale(0.96);
+    }
+}
+
+/* ---- All content sits above background ---- */
+.navbar,
+.slide,
+.categories,
+.listings,
+.footer,
+.login,
+.register,
+.listing-details,
+.create-listing,
+.list,
+.title-list,
+.category-list,
+.loader {
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================================================
+   SECTION BACKGROUNDS — Each section gets a proper bg
+   so there are NO gaps showing body color between them
+   ========================================================= */
+
+/* Navbar — dark glass on dark bg */
+.navbar {
+    background: rgba(26, 26, 46, 0.92) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Navbar text/icons — white on dark */
+.navbar img {
+    filter: brightness(2) !important;
+}
+
+.navbar_search {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.navbar_search input {
+    color: white !important;
+}
+
+.navbar_search input::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.navbar_right .host {
+    color: #fff !important;
+}
+
+.navbar_right .host:hover {
+    color: #F8395A !important;
+}
+
+.navbar_right_account {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.navbar_right_accountmenu {
+    background: #1a1a2e !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.navbar_right_accountmenu a {
+    color: #ccc !important;
+}
+
+.navbar_right_accountmenu a:hover {
+    color: #F8395A !important;
+    background: rgba(248, 57, 90, 0.1) !important;
+}
+
+/* Hero slide — already has bg image, just ensure full bleed */
+.slide {
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+/* Categories section — soft dark card */
+.categories {
+    background: rgba(22, 33, 62, 0.95) !important;
+    backdrop-filter: blur(10px);
+    padding: 60px 60px 50px !important;
+}
+
+.categories h1 {
+    color: #ffffff !important;
+}
+
+.categories>p {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Category filter bar (on home page above listings) */
+.category-list {
+    background: rgba(22, 33, 62, 0.92) !important;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.category-list .category {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.category-list .category:hover,
+.category-list .category.selected {
+    color: #F8395A !important;
+}
+
+.category-list .category p {
+    color: inherit !important;
+}
+
+/* Listings grid — sits on dark bg */
+.listings {
+    background: rgba(26, 26, 46, 0.9) !important;
+    padding: 30px 60px 80px !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+@media (max-width: 768px) {
+    .listings {
+        padding: 20px 20px 60px !important;
+    }
+}
+
+/* List pages (category, search, trips, etc.) */
+.list {
+    background: transparent !important;
+    padding-top: 10px;
+}
+
+/* Page title on dark background */
+h1.title-list,
+.title-list {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    background: none !important;
+    margin-left: 100px !important;
+}
+
+@media (max-width: 768px) {
+
+    h1.title-list,
+    .title-list {
+        margin-left: 50px !important;
+    }
+}
+
+/* Create listing — white paneled (content heavy) */
+.create-listing {
+    background: rgba(255, 255, 255, 0.97) !important;
+    min-height: 100vh;
+}
+
+/* Listing details — white paneled (content heavy) */
+.listing-details {
+    background: rgba(255, 255, 255, 0.97) !important;
+    min-height: 80vh;
+}
+
+/* Login page — already has background image, no change needed */
+/* Register page — already has background image, no change needed */
+
+/* Footer — dark, seamlessly continues from body */
+.footer {
+    margin-top: 0 !important;
+    background: linear-gradient(135deg, #0f0f23 0%, #16213e 50%, #0f0f23 100%) !important;
+    border-top: 1px solid rgba(248, 57, 90, 0.15);
+}
+
+/* ---- Loader on dark bg ---- */
+.loader {
+    background: transparent !important;
+}

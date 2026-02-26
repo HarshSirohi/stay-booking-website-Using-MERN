@@ -1,0 +1,286 @@
+
+// @use "./variables" as var;
+// @use "./breakpoints" as bp;
+
+// html, body {
+//     overflow: hidden; /* Prevents overflow */
+//     height: 100%;    /* Ensures full height */
+//     margin: 0;       /* Removes default margin */
+// }
+
+
+
+
+// .register {
+//   width: 100%;
+//   height: 100vh;
+//   display: flex;
+//   // width: 100%;
+//   // height: 100vh;
+//   overflow: hidden;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+//   background: url("/assets/register.jpg") center;
+//   background-size: cover;
+//    box-sizing: border-box; 
+
+//   &_content {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 15px;
+//     width: 40%;
+//     padding: 40px;
+//     background-color: rgba(0, 0, 0, 0.8);
+//     border-radius: 20px;
+
+//     @include bp.lg { width: 60%; }
+//     @include bp.mm { width: 80%; }
+
+//     &_form {
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       gap: 15px;
+
+//       input {
+//         width: 100%;
+//         padding: 7px 15px;
+//         background-color: transparent;
+//         border: none;
+//         border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+//         outline: none;
+//         text-align: center;
+//         color: white;
+
+//         &:focus:not(:placeholder-shown) {
+//           background: transparent;
+//         }
+
+//         &::placeholder {
+//           color: white;
+//         }
+//       }
+
+//       label {
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+//         gap: 9px;
+//         cursor: pointer;
+//         color: white;
+//         font-size: 14px;
+
+//         img { width: 25px; }
+//       }
+
+//       button {
+//         margin-top: 15px;
+//         @include var.buttonStyle;
+//         width: 50%;
+
+//         &:hover {
+//           box-shadow: 0 0 10px 3px rgba(255, 255, 255, 1);
+//         }
+//       }
+//     }
+
+//     a {
+//       text-decoration: none;
+//       color: white;
+//       font-size: 13px;
+//       margin-top: 10px;
+//       text-align: center;
+
+//       &:hover { text-decoration: underline; }
+//     }
+//   }
+// }
+
+
+// @use "./variables" as var;
+// @use "./breakpoints" as bp;
+
+// html, body {
+//     overflow: hidden;       /* Prevents overflow */
+//     height: 100%;          /* Ensures full height */
+//     margin: 0;             /* Removes default margin */
+// }
+
+// .register {
+//     position: fixed;        /* Use fixed for full coverage */
+//     top: 0; bottom: 0; left: 0; right: 0; /* Cover the entire viewport */
+//     display: flex;         /* Use flexbox for centering */
+//     justify-content: center; 
+//     align-items: center;
+//     background: url("/assets/register.jpg") no-repeat center center fixed; 
+//     background-size: cover; /* Cover the background image */
+    
+//     &_content {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 15px;
+//         width: 40%;
+//         max-width: 400px;   /* Set a max width to avoid stretching */
+//         padding: 40px;
+//         background-color: rgba(0, 0, 0, 0.8);
+//         border-radius: 20px;
+
+//         @include bp.lg { width: 60%; }
+//         @include bp.mm { width: 80%; }
+
+//         &_form {
+//             display: flex;
+//             flex-direction: column;
+//             align-items: center;
+//             gap: 15px;
+
+//             input {
+//                 width: 100%;
+//                 padding: 10px;   /* Increased padding for aesthetics */
+//                 background-color: transparent;
+//                 border: none;
+//                 border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+//                 outline: none;
+//                 text-align: center;
+//                 color: white;
+
+//                 &:focus:not(:placeholder-shown) {
+//                     background: transparent;
+//                 }
+
+//                 &::placeholder {
+//                     color: rgba(255, 255, 255, 0.6); /* Lighter placeholder */
+//                 }
+//             }
+
+//               //       label {
+//               // display: flex;
+//               // flex-direction: column;
+//               // justify-content: center;
+//               // align-items: center;
+//               // gap: 9px;
+//               // cursor: pointer;
+//               // color: white;
+//               // font-size: 14px;
+
+//               // img {
+//               //     width: 25px;   /* Fix upload logo size here */
+//               // }
+
+//             button {
+//                 margin-top: 15px;
+//                 @include var.buttonStyle;
+//                 width: 70%; /* Adjust button width for better fit */
+//                 /* Add margin for spacing from the text above */
+//             }
+
+//             a, p {
+//                 margin: 10px 0; /* Space around links and texts */
+//                 color: white;
+//                 text-align: center;
+//             }
+//         }
+//     }
+// }
+
+
+@use "./variables" as var;
+@use "./breakpoints" as bp;
+
+// html, body {
+//     overflow: hidden;
+//     height: 100%;
+//     margin: 0;
+// }
+
+.register {
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("/assets/register.jpg") no-repeat center center fixed;
+    background-size: cover;
+
+    &_content {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 40%;
+        max-width: 400px;
+        padding: 40px;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 20px;
+
+        @include bp.lg { width: 60%; }
+        @include bp.mm { width: 80%; }
+
+        &_form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+
+            input {
+                width: 100%;
+                padding: 10px;
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+                outline: none;
+                text-align: center;
+                color: white;
+
+                &:focus:not(:placeholder-shown) {
+                    background: transparent;
+                }
+
+                &::placeholder {
+                    color: rgba(255, 255, 255, 0.6);
+                }
+            }
+
+            label {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 9px;
+                cursor: pointer;
+                color: white;
+                font-size: 14px;
+
+                img {
+                    width: 25px;  /* Fix upload logo size */
+                }
+            }
+
+            button {
+                margin-top: 15px;
+                @include var.buttonStyle;
+                width: 70%;
+            }
+
+            p, a {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            p {
+                color: white;
+            }
+
+            a {
+                color: #F8395A; /* pink-red from your variables */
+                text-decoration: none;
+                font-weight: 500;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

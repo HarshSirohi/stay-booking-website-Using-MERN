@@ -1,0 +1,142 @@
+/* ===== LISTING DETAILS ENHANCEMENTS ===== */
+
+/* Page entrance */
+.listing-details {
+    animation: fadeInUp 0.6s ease forwards;
+    background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
+}
+
+/* Title */
+.listing-details .title h1 {
+    background: linear-gradient(135deg, #24355A 0%, #F8395A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: clamp(24px, 4vw, 38px);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+/* Photo gallery hover */
+.listing-details .photos img {
+    border-radius: 14px;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    cursor: zoom-in;
+}
+
+.listing-details .photos img:hover {
+    transform: scale(1.04) translateY(-4px);
+    box-shadow: 0 16px 48px rgba(248, 57, 90, 0.2), 0 6px 20px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+    position: relative;
+}
+
+/* Dividers */
+.listing-details hr {
+    border: none;
+    border-top: 1px solid rgba(36, 53, 90, 0.1);
+    margin: 28px 0;
+}
+
+/* Location h2 */
+.listing-details>h2 {
+    color: #24355A;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* Host profile */
+.listing-details .profile img {
+    width: 64px !important;
+    height: 64px !important;
+    border-radius: 50%;
+    border: 3px solid #F8395A;
+    box-shadow: 0 0 0 4px rgba(248, 57, 90, 0.15);
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+.listing-details .profile img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 6px rgba(248, 57, 90, 0.3);
+}
+
+.listing-details .profile h3 {
+    color: #24355A;
+    font-weight: 700;
+}
+
+/* Section headings */
+.listing-details h3 {
+    color: #24355A;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* Facility pills */
+.listing-details .facility {
+    background: #f7f8fc;
+    border: 1px solid rgba(36, 53, 90, 0.1);
+    border-radius: 50px;
+    padding: 10px 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.listing-details .facility:hover {
+    background: linear-gradient(135deg, #F8395A, #ff6b8a);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(248, 57, 90, 0.3);
+}
+
+.listing-details .facility:hover p {
+    color: white;
+}
+
+.listing-details .facility_icon {
+    color: #F8395A;
+    transition: color 0.3s;
+}
+
+.listing-details .facility:hover .facility_icon {
+    color: white;
+}
+
+/* Booking section */
+.listing-details .booking {
+    background: linear-gradient(135deg, #f8f9ff 0%, #fff5f7 100%);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(248, 57, 90, 0.1);
+    box-shadow: 0 4px 30px rgba(36, 53, 90, 0.06);
+    margin-top: 20px;
+}
+
+/* Date range calendar */
+.listing-details .date-range-calendar h2 {
+    color: #24355A;
+    font-weight: 700;
+}
+
+/* Booking button */
+.listing-details .button {
+    background: linear-gradient(135deg, #F8395A 0%, #ff6b8a 50%, #F8395A 100%) !important;
+    background-size: 200% auto !important;
+    border: none !important;
+    border-radius: 14px !important;
+    color: white !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.5px !important;
+    transition: background-position 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease !important;
+    box-shadow: 0 6px 22px rgba(248, 57, 90, 0.45) !important;
+}
+
+.listing-details .button:hover {
+    background-position: right center !important;
+    box-shadow: 0 12px 36px rgba(248, 57, 90, 0.6) !important;
+    transform: translateY(-3px) !important;
+}
